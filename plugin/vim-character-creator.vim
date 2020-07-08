@@ -13,6 +13,7 @@ function Rand()
 	return rand
 endfunction
 
+
 let s:classes = ["Wizard", "Bard", "Monk"]
 
 function g:Get_Character_Class()
