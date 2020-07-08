@@ -8,10 +8,11 @@ if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
 endif
 let g:loaded_character_creator_plugin = 1
 
+if !has("python3")
+    echo "vim has to be compiled with +python3 to run this"
+    finish
+endif
+
 function g:Get_Foo()
-	python3 << EOF
-		import vim_character_creator
-		vim_character_creator.return_classes()
-		vim_character_creator.return_race()
-	EOF
+	python3 return_classes()
 endfunction
