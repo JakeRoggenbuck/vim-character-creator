@@ -1,6 +1,6 @@
-" sneak.vim - The missing motion
+" character-creator.vim - A simple tool to help with role playing games
 " Authors:      Jake Roggenbuck and Kevin Rockwell
-" Version:      0.1
+" Version:      0.2
 " License:      MIT
 
 if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
@@ -27,6 +27,6 @@ endfunction
 
 function g:Character_Creator_Help()
 	echo "Role: role a dice in vim"
-	echo "Example: run ':call g:Character_Creator_Roll('1d8')'"
+	echo "Example: run ':echo Character_Creator_Roll('1d8')'"
 	echo "Options: have the number of dice before the 'd' and the dice value after"
 endfunction
