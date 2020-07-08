@@ -30,8 +30,7 @@ function g:Character_Decision()
 	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?", "likely not", "Id rather be a wizard with only melee weapons"]
 	let rand = system("python -c 'import random;print(random.randint(1, 5))'")
 	return decisions[rand]
-
-
+endfunction
 
 function g:Character_Creator_Help()
 	echo "Role: role a dice in vim"
