@@ -8,9 +8,6 @@ if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
 endif
 let g:loaded_character_creator_plugin = 1
 
-" ./plugin/my-vim-plugin.vim
-let g:plugin_path = expand('<sfile>:p:h')
-
 function Roll(dice)
 	"e.g. 1d4
 	let nums = split('d')
@@ -24,16 +21,4 @@ function Roll(dice)
 		count -= 1
 	endwhile
 	return total
-endfunction
-
-function! MyVimPlugin()
-python << endpython
-
-import vim
-
-vim.command("let a:plugin_path = expand('<sfile>:p:h')")
-plugin_path = vim.eval("a:plugin_path")
-print plugin_path
-
-endpython
 endfunction
