@@ -22,6 +22,7 @@ function g:Character_Creator_Roll(dice)
 		let total += rand
 		let count -= 1
 	endwhile
+	echo total
 	return total
 endfunction
 
