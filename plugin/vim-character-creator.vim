@@ -13,18 +13,22 @@ if !has("python3")
     finish
 endif
 
-let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+let g:plugin_path = expand('<sfile>:p:h')
 
-python3 << EOF
+function! g:MyVimPlugin()
+python << endpython
+
+import os
 import sys
-from os.path import normpath, join
 import vim
-plugin_root_dir = vim.eval('s:plugin_root_dir')
-python_root_dir = normpath(join(plugin_root_dir, '.', 'python3'))
-sys.path.insert(0, python_root_dir)
-print(python_root_dir)
-import py_vim_character_creator
-EOF
+
+plugin_path = vim.eval("g:plugin_path")
+python_module_path = os.path.abspath('%s/../lib' % (plugin_path))
+sys.path.append(python_module_path)
+from mypymodule import py_vim_character_creator
+
+endpython
+endfunction
 
 function! g:Get_Foo()
 	python3 return_classes()
