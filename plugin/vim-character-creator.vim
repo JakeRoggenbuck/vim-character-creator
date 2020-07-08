@@ -13,12 +13,13 @@ function Role(num)
 	return rand
 endfunction
 
-function g:Get_User_Choice()
+function g:Get_User_Choice(question)
   let curline = getline('.')
   call inputsave()
+  echo a:question . "\n"
   let name = input('Enter name: ')
   call inputrestore()
-  echo name
+  echo "\n" . name
 endfunction
 
 let s:classes = ["Wizard", "Bard", "Monk"]
