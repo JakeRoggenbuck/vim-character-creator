@@ -25,7 +25,7 @@ function g:Print_Choices(question)
 	for i in a:question
 		echo x
 		let x += 1
-	endwhile
+	endfor
 endfunction
 
 let s:classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
