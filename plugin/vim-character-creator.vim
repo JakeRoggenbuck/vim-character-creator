@@ -9,7 +9,7 @@ endif
 let g:loaded_character_creator_plugin = 1
 
 function Rand()
-	let rand = :!command python -c 'import random; print(random.randint(0, 2))'
+	let rand = system('python -c "import random; print(random.randint(0, 2))"')
 	return rand
 endfunction
 
