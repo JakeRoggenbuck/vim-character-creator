@@ -14,5 +14,6 @@ if !has("python3")
 endif
 
 function g:Get_Foo()
+	python3 import vim_character_creator
 	python3 return_classes()
 endfunction
