@@ -30,7 +30,5 @@ function g:Get_Foo()
 	let race = g:Get_User_Choice(s:race)
 	let name = g:Get_User_Choice("Name?")
 
-	echo class
-	echo race
-	echo name
+	echo "\n You are a " . race . class . " named " . name
 endfunction
