@@ -8,6 +8,12 @@ if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
 endif
 let g:loaded_character_creator_plugin = 1
 
-python << EOF
-    print "Hello from Vim's Python!"
-EOF
+function Rand()
+    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+endfunction
+
+let classes = ["Wizard", "Bard", "Monk"]
+
+function g:Get_Character_Class()
+	return classes[Rand()]
+endfunction
