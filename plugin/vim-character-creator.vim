@@ -21,6 +21,7 @@ function g:Get_User_Choice()
 endfunction
 
 function g:Print_Choices(question)
+	let x = 0
 	while x < len(question)
 		echo question[x]
 		let x += 1
