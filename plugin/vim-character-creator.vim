@@ -9,8 +9,7 @@ endif
 let g:loaded_character_creator_plugin = 1
 
 function Rand()
-	let Random = vital#of('vital').import('Random')
-	return Random.range(1, 7)
+	return system($(( ( RANDOM % 10 )  + 1 ))))
 endfunction
 
 let s:classes = ["Wizard", "Bard", "Monk"]
