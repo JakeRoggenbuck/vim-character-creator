@@ -22,9 +22,9 @@ endfunction
 
 function g:Print_Choices(question)
 	let x = 0
-	while a:x < len(a:question)
-		echo a:question[a:x]
-		let a:x += 1
+	while l:x < len(l:question)
+		echo l:question[l:x]
+		let l:x += 1
 	endwhile
 endfunction
 
