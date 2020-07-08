@@ -20,11 +20,11 @@ import sys
 from os.path import normpath, join
 import vim
 plugin_root_dir = vim.eval('s:plugin_root_dir')
-python_root_dir = normpath(join(plugin_root_dir, '..', 'python'))
+python_root_dir = normpath(join(plugin_root_dir, 'python'))
 sys.path.insert(0, python_root_dir)
 import py_vim_character_creator
 EOF
 
-function g:Get_Foo()
+function! g:Get_Foo()
 	python return_classes()
 endfunction
