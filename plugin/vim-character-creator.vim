@@ -21,10 +21,10 @@ function g:Get_User_Choice()
 endfunction
 
 function g:Print_Choices(question)
-	let x = 0
-	while x < len(question)
-		echo question[x]
-		let x += 1
+	let a:x = 0
+	while a:x < len(a:question)
+		echo a:question[a:x]
+		let a:x += 1
 	endwhile
 endfunction
 
