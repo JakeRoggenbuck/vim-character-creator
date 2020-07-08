@@ -14,16 +14,16 @@ function Role(num)
 endfunction
 
 function g:Get_User_Choice(question)
-  echo a:question
-  let curline = getline('.')
-  call inputsave()
-  let ans = input('Enter a number: ')
-  call inputrestore()
-  return ans
+	echo s:question
+	let curline = getline('.')
+	call inputsave()
+  	let ans = input('Enter a num: ')
+  	call inputrestore()
+	return ans
 endfunction
 
 let s:classes = "Barbarian:0, Bard:1, Cleric:2, Druid:3, Fighter:4, Monk:5, Paladin:6, Ranger:7, Rogue:8, Sorcerer:9, Warlock:10, Wizard:11"
 
 function g:Get_Foo()
-	return g:Get_User_Choice(s:classes)
+	echo g:Get_User_Choice(s:classes)
 endfunction
