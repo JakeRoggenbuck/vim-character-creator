@@ -17,13 +17,13 @@ function g:Get_User_Choice(question)
   let curline = getline('.')
   call inputsave()
   echo a:question . "\n"
-  let name = input('Enter name: ')
+  let ans = input('Enter a number: ')
   call inputrestore()
-  echo "\n" . name
+  return ans
 endfunction
 
-let s:classes = ["Wizard", "Bard", "Monk"]
+let s:classes =
 
-function g:Get_Character_Class()
-	return s:classes[Role(2)]
-endfunction
+let s:character_class = g:Get_User_Choice(s:classes)
+
+echo s:character_class
