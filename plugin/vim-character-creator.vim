@@ -22,7 +22,7 @@ endfunction
 
 function g:Print_Choices(question)
 	let x = 0
-	for i in question
+	for i in a:question
 		echo i
 		let x += 1
 	endfor
