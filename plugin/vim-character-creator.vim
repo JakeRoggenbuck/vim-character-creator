@@ -27,5 +27,5 @@ import py_vim_character_creator
 EOF
 
 function! g:Get_Foo()
-	python3 return_classes()
+	python3 py_vim_character_creator.return_classes()
 endfunction
