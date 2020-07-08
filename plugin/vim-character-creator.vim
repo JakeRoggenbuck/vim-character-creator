@@ -9,7 +9,8 @@ endif
 let g:loaded_character_creator_plugin = 1
 
 function Rand()
-	return system($(( ( RANDOM % 10 )  + 1 ))))
+	let l:rand = system($(( ( RANDOM % 10 )  + 1 ))))
+	return l:rand
 endfunction
 
 let s:classes = ["Wizard", "Bard", "Monk"]
