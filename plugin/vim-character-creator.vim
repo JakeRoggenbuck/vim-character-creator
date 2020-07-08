@@ -22,7 +22,7 @@ endfunction
 
 function g:Print_Choices(question)
 	let x = 0
-	while x < len(a:question) - 1
+	while x < len(a:question)
 		echo a:question[x]
 		let x += 1
 	endwhile
