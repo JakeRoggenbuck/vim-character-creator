@@ -10,7 +10,7 @@ let g:loaded_character_creator_plugin = 1
 
 function g:Character_Creator_Roll(dice)
 	"e.g. 1d4
-	let nums = split(dice, 'd')
+	let nums = split(a:dice, 'd')
 	if len(nums) != 2
 		return 'Invalid arguments'
 	endif
