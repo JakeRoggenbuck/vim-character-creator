@@ -27,7 +27,7 @@ function g:Character_Creator_Roll(dice)
 endfunction
 
 function g:Character_Creator_Help()
-	echo "Role: role a dice in vim"
+	echo "Role: role dice in vim"
 	echo "Example: run ':echo Character_Creator_Roll('1d8')'"
 	echo "Options: have the number of dice before the 'd' and the dice value after"
 endfunction
