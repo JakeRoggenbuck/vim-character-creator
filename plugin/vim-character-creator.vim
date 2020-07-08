@@ -10,13 +10,13 @@ let g:loaded_character_creator_plugin = 1
 
 " ./plugin/my-vim-plugin.vim
 function! MyVimPlugin()
-python << endpython
+python3 << endpython
 
 import vim
 
 vim.command("let a:plugin_path = expand('<sfile>:p:h'")
 plugin_path = vim.eval("a:plugin_path")
-print plugin_path
+print(plugin_path)
 
 endpython
 endfunction
