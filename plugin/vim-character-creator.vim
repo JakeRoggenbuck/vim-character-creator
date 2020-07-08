@@ -14,7 +14,7 @@ function Role(num)
 endfunction
 
 function g:Get_User_Choice(question)
-	echo question
+	echo s:question
 	let curline = getline('.')
 	call inputsave()
 	let name = input('Answer: ')
