@@ -1,10 +1,10 @@
 " sneak.vim - The missing motion
-" Authors:      Jake Roggenbuck and Kevin Rockwell 
+" Authors:      Jake Roggenbuck and Kevin Rockwell
 " Version:      0.1
 " License:      MIT
 
 if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
-  finish
+	finish
 endif
 let g:loaded_character_creator_plugin = 1
 
@@ -27,9 +27,9 @@ function g:Print_Choices(question)
 	endwhile
 endfunction
 
-let s:classes = [Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard]
+let s:classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
 
-let s:race = [Dragonborn, Dwarf, Elf, Gnome, Half-Elf, Halfling, Half-Orc, Human, Tiefling, Orc of Exandria, Leonin, Satyr, Aarakocra, Genasi: Goliath, Aasimar, Bugbear, Firbolg, Goblin, Hobgoblin, Kenku, Kobold, Lizardfolk, Orc, Tabaxi, Triton, Yuan-ti Pureblood, Feral Tiefling, Torle, Changeling, Kalashtar, Orc of Eberron, Shifter, Warforged, Gith, Centaur, Loxodon, Minotaur, Simic Hybrid, Vedalken, Verdan, Locathah]
+let s:race = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling", "Orc of Exandria", "Leonin", "Satyr", "Aarakocra", "Genasi", "Goliath", "Aasimar", "Bugbear", "Firbolg", "Goblin", "Hobgoblin", "Kenku", "Kobold", "Lizardfolk", "Orc", "Tabaxi", "Triton", "Yuan-ti Pureblood", "Feral Tiefling", "Torle", "Changeling", "Kalashtar", "Orc of Eberron", "Shifter", "Warforged", "Gith", "Centaur", "Loxodon", "Minotaur", "Simic Hybrid", "Vedalken", "Verdan", "Locathah"]
 
 function g:Get_Foo()
 	call g:Print_Choices(s:classes))
