@@ -22,8 +22,8 @@ endfunction
 
 function g:Print_Choices(question)
 	let x = 0
-	for i in a:question
-		echo x
+	for i in question
+		echo i
 		let x += 1
 	endfor
 endfunction
