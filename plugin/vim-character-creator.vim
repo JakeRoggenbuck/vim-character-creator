@@ -17,7 +17,7 @@ function g:Character_Creator_Roll(dice)
 	let total = 0
 	let count = nums[0]
 	while count > 0
-		let total += :!command python -c 'import random;print(random.randint(0,' . nums[1] . '))'
+		let total += 1
 		count -= 1
 	endwhile
 	return total
