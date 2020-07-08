@@ -13,6 +13,14 @@ function Role(num)
 	return rand
 endfunction
 
+function g:Get_User_Choice()
+  let curline = getline('.')
+  call inputsave()
+  let name = input('Enter name: ')
+  call inputrestore()
+  echo name
+endfunction
+
 let s:classes = ["Wizard", "Bard", "Monk"]
 
 function g:Get_Character_Class()
