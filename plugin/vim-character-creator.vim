@@ -16,7 +16,7 @@ endfunction
 function g:Get_User_Choice(question)
   let curline = getline('.')
   call inputsave()
-  echo a:question . "\n"
+  echo a:question
   let ans = input('Enter a number: ')
   call inputrestore()
   return ans
