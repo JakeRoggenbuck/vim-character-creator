@@ -26,6 +26,13 @@ function g:Character_Creator_Roll(dice)
 	return total
 endfunction
 
+function g:Character_Decision()
+	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?", "likely not", "Id rather be a wizard with only melee weapons"]
+	let rand = system("python -c 'import random;print(random.randint(1, 5))'")
+	return decisions[rand]
+
+
+
 function g:Character_Creator_Help()
 	echo "Role: role a dice in vim"
 	echo "Example: run ':echo Character_Creator_Roll('1d8')'"
