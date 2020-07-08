@@ -22,8 +22,8 @@ endfunction
 
 function g:Print_Choices(question)
 	let x = 0
-	while x < len(a:question)
-		echo a:question[x]
+	for i in a:question
+		echo x
 		let x += 1
 	endwhile
 endfunction
@@ -34,12 +34,12 @@ let s:race = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Ha
 
 function g:Get_Foo()
 	call g:Print_Choices(s:classes))
-	"let class = g:Get_User_Choice()
+	let class = g:Get_User_Choice()
 
 	call g:Print_Choices(s:race))
-	"let race = g:Get_User_Choice()
+	let race = g:Get_User_Choice()
 
-	"let name = g:Get_User_Choice("Name?")
+	let name = g:Get_User_Choice("Name?")
 
-	"echo \n You are a  . race . class .  named  . name
+	echo \n You are a  . race . class .  named  . name
 endfunction
