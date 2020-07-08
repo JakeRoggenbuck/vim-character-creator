@@ -8,14 +8,13 @@ if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
 endif
 let g:loaded_character_creator_plugin = 1
 
-function Rand()
+function Role()
 	let rand = system('python -c "import random; print(random.randint(0, 2))"')
 	return rand
 endfunction
 
-
 let s:classes = ["Wizard", "Bard", "Monk"]
 
 function g:Get_Character_Class()
-	return s:classes[Rand()]
+	return s:classes[Role()]
 endfunction
