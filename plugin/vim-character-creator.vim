@@ -8,7 +8,7 @@ if exists('g:loaded_character_creator_plugin') || &compatible || v:version < 700
 endif
 let g:loaded_character_creator_plugin = 1
 
-function Roll(dice)
+function g:Character_Creator_Roll(dice)
 	"e.g. 1d4
 	let nums = split('d')
 	if len(nums) != 2
@@ -21,4 +21,10 @@ function Roll(dice)
 		count -= 1
 	endwhile
 	return total
+endfunction
+
+function g:Character_Creator_Help()
+	echo "Role: role a dice in vim"
+	echo "Example: run ':call g:Character_Creator_Roll('1d8')'"
+	echo "Options: have the number of dice before the 'd' and the dice value after"
 endfunction
