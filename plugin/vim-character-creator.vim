@@ -9,7 +9,8 @@ endif
 let g:loaded_character_creator_plugin = 1
 
 function Rand()
-    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+	let Random = vital#of('vital').import('Random')
+	return Random.range(1, 7)
 endfunction
 
 let s:classes = ["Wizard", "Bard", "Monk"]
