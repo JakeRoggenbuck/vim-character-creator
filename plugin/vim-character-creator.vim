@@ -9,8 +9,8 @@ endif
 let g:loaded_character_creator_plugin = 1
 
 function Rand()
-	let l:rand = :!command python -c 'import random; print(random.randint(0, 2))'
-	return l:rand
+	let rand = :!command python -c 'import random; print(random.randint(0, 2))'
+	return rand
 endfunction
 
 let s:classes = ["Wizard", "Bard", "Monk"]
