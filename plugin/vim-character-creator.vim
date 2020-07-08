@@ -26,3 +26,4 @@ let s:classes = "Barbarian:0, Bard:1, Cleric:2, Druid:3, Fighter:4, Monk:5, Pala
 
 function g:Get_Foo()
 	echo g:Get_User_Choice(s:classes)
+endfunction
