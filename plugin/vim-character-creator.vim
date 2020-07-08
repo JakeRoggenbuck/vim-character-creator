@@ -16,5 +16,5 @@ endfunction
 let s:classes = ["Wizard", "Bard", "Monk"]
 
 function g:Get_Character_Class()
-	return s:classes[Role(90)]
+	return s:classes[Role(3)]
 endfunction
