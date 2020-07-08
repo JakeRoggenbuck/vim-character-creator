@@ -18,7 +18,7 @@ function g:Character_Creator_Roll(dice)
 	let count = nums[0]
 	while count > 0
 		let total += 1
-		count -= 1
+		let count -= 1
 	endwhile
 	return total
 endfunction
