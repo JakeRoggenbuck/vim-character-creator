@@ -50,7 +50,7 @@ let g:character_attr = {
 	\ "CHA":1}
 
 let g:character_skills = {
-	\ " ":0
+	\ " ":0,
 	\ "Character_Athletics": saving_throws["STR"] / 2,
 	\ "Acrobatics": saving_throws["DEX"] / 2,
 	\ "Sleight_of_Hand": saving_throws["DEX"] / 2,
