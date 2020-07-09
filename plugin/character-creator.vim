@@ -50,7 +50,6 @@ let g:character_attr = {
 	\ "CHA":1}
 
 let g:character_skills = {
-	\ " ":0,
 	\ "Character_Athletics": saving_throws["STR"] / 2,
 	\ "Acrobatics": saving_throws["DEX"] / 2,
 	\ "Sleight_of_Hand": saving_throws["DEX"] / 2,
@@ -76,7 +75,7 @@ let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana
 
 function g:Character_Skill_Check(check)
 	if type(a:check) == 1
-		if get(g:character_skills, a:check) != 0
+		if get(g:character_skills, a:check, "NONE") != "NONE"
 			let max = 20 + get(g:character_skills, a:check)
 			let rand_command = 'import random;print(f"[{random.randint(0,' . max . ')}, {random.randint(0,' . max . ')}]")'
 			let rand = system("python -c '" . rand_command . "'")
