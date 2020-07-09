@@ -34,20 +34,20 @@ function g:Character_Decision()
 endfunction
 
 let g:saving_throws = {
-	\ "STR":1,
-	\ "DEX":0,
-	\ "CON":0,
-	\ "INT":6,
-	\ "WIS":6,
-	\ "CHA":1}
+	\ "STR": "1",
+	\ "DEX": "0",
+	\ "CON": "0",
+	\ "INT": "6",
+	\ "WIS": "6",
+	\ "CHA": "1"}
 
 let g:character_attr = {
-	\ "STR":1,
-	\ "DEX":0,
-	\ "CON":0,
-	\ "INT":3,
-	\ "WIS":3,
-	\ "CHA":1}
+	\ "STR": "1",
+	\ "DEX": "0",
+	\ "CON": "0",
+	\ "INT": "3",
+	\ "WIS": "3",
+	\ "CHA": "1"}
 
 let g:character_skills = {
 	\ "Character_Athletics": character_attr["STR"],
@@ -75,8 +75,8 @@ let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana
 
 function g:Character_Skill_Check(check)
 	if type(a:check) == 1
-		if get(g:character_skills, a:check, "NONE") != "NONE"
-			let prof_ = get(g:character_skills, a:check)
+		if get(str2nr(g:character_skills), a:check, "NONE") != "NONE"
+			let prof_ = str2nr(get(g:character_skills), a:check)
 			let rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . prof_ . '}, {role2 + ' . prof_ . '}] Nat:({role1},{role2})")'
 			let rand = system("python -c '" . rand_command . "'")
 			echo "Adv:" . prof_ . rand
