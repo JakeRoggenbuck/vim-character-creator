@@ -77,7 +77,7 @@ function g:Character_Skill_Check(check)
 	if type(a:check) == 1
 		if get(g:character_skills, a:check, "NONE") != "NONE"
 			let prof_ = get(g:character_skills, a:check)
-			let rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f"Role:[{role1 + ' . prof_ . '}, {role2 + ' . prof_ . '}] Nat:({role1},{role2})")'
+			let rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . prof_ . '}, {role2 + ' . prof_ . '}] Nat:({role1},{role2})")'
 			let rand = system("python -c '" . rand_command . "'")
 			echo "Adv:" . prof_ . rand
 		else
