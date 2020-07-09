@@ -50,7 +50,7 @@ let g:character_attr = {
 	\ "CHA": "1"}
 
 let g:character_skills = {
-	\ "Character_Athletics": character_attr["STR"],
+	\ "Athletics": character_attr["STR"],
 	\ "Acrobatics": character_attr["DEX"],
 	\ "Sleight_of_Hand": character_attr["DEX"],
 	\ "Stealth": character_attr["DEX"],
