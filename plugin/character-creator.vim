@@ -27,9 +27,64 @@ function g:Character_Creator_Roll(dice)
 endfunction
 
 function g:Character_Decision()
-	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?", "likely not", "Id rather be a wizard with only melee weapons"]
-	let rand = system("python -c 'import random;print(random.randint(0, 4))'")
-	return decisions[rand]
+	let l:decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?",
+					\"likely not", "Id rather be a wizard with only melee weapons"]
+	let l:rand = system("python -c 'import random;print(random.randint(0, 4))'")
+	return decisions[l:rand]
+endfunction
+
+let g:saving_throws = {
+	\ "STR": "1",
+	\ "DEX": "0",
+	\ "CON": "0",
+	\ "INT": "6",
+	\ "WIS": "6",
+	\ "CHA": "1"}
+
+let g:character_attr = {
+	\ "STR": "1",
+	\ "DEX": "0",
+	\ "CON": "0",
+	\ "INT": "3",
+	\ "WIS": "3",
+	\ "CHA": "1"}
+
+let g:character_skills = {
+	\ "Athletics": character_attr["STR"],
+	\ "Acrobatics": character_attr["DEX"],
+	\ "Sleight_of_Hand": character_attr["DEX"],
+	\ "Stealth": character_attr["DEX"],
+	\ "Arcana": saving_throws["INT"],
+	\ "History": saving_throws["INT"],
+	\ "Investigation": saving_throws["INT"],
+	\ "Nature": character_attr["INT"],
+	\ "Religion": character_attr["INT"],
+	\ "Animal_Handling": character_attr["WIS"],
+	\ "Insight": saving_throws["WIS"],
+	\ "Medicine": character_attr["WIS"],
+	\ "Perception": character_attr["WIS"],
+	\ "Survival": character_attr["WIS"],
+	\ "Deception": character_attr["CHA"],
+	\ "Intimidation": character_attr["CHA"],
+	\ "Performance": character_attr["CHA"],
+	\ "Persuasion": character_attr["CHA"]}
+
+let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
+			 \"Nature", "Religion", "Animal Handling", "Insight", "Medicine", "Perception", "Survival",
+			 \"Deception", "Intimidation", "Performance", "Persuasion"]
+
+function g:Character_Skill_Check(check)
+	if type(a:check) == 1
+		if get(g:character_skills, a:check, "NONE") != "NONE"
+			let l:prof_ = get(g:character_skills, a:check)
+			let l:rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . l:prof_ . '}, {role2 + ' . l:prof_ . '}] Nat:({role1},{role2})")'
+			let l:rand_ = system("python -c '" . l:rand_command . "'")
+			echo a:check
+			echo "Adv:" . l:prof_ . l:rand_
+		else
+			echo s:checks
+		endif	
+	endif
 endfunction
 
 function g:Character_Creator_Help()
