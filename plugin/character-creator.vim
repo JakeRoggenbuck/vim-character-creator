@@ -69,7 +69,7 @@ let g:character_skills = {
 	\ "Performance": saving_throws["CHA"] / 2,
 	\ "Persuasion": saving_throws["CHA"] / 2}
 
-let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
+let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
 			 \"Nature", "Religion", "Animal Handling", "Insight", "Medicine", "Perception", "Survival",
 			 \"Deception", "Intimidation", "Performance", "Persuasion"]
 
@@ -77,8 +77,11 @@ function g:Character_Skill_Check(check)
 	if type(a:check) == 1
 		if get(g:character_skills, a:check) == 3
 			let max = 20 + get(g:character_skills, a:check)
-			let rand = system("python -c 'import random;print(random.randint(1,'" . max . "'))'")
+			let rand_command = 'import random;print("[" + str(random.randint(0,3)) + "," + str(random.randint(0,3)) + "]")'
+			let rand = system("python -c " . rand_command)
 			echo "Adv " . get(g:character_skills, a:check) . "| Rand " . rand
+		else
+			echo s:checks
 		endif	
 	endif
 endfunction
