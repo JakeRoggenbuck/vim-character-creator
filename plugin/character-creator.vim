@@ -35,11 +35,11 @@ endfunction
 
 let g:saving_throws = {
 	\ "STR":1,
-    \ "DEX":0,
-    \ "CON":0,
-    \ "INT":6,
-    \ "WIS":6,
-    \ "CHA":1}
+	\ "DEX":0,
+	\ "CON":0,
+	\ "INT":6,
+	\ "WIS":6,
+	\ "CHA":1}
 
 let g:character_attr = {
 	\ "STR":1,
