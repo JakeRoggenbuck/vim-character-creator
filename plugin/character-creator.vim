@@ -27,9 +27,57 @@ function g:Character_Creator_Roll(dice)
 endfunction
 
 function g:Character_Decision()
-	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?", "likely not", "Id rather be a wizard with only melee weapons"]
+	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?", 
+					\"likely not", "Id rather be a wizard with only melee weapons"]
 	let rand = system("python -c 'import random;print(random.randint(0, 4))'")
 	return decisions[rand]
+endfunction
+
+let saving_throws = {
+	\ "STR":1,
+    \ "DEX":0,
+    \ "CON":0,
+    \ "INT":6,
+    \ "WIS":6,
+    \ "CHA":1,
+}
+
+let character_attr = {
+	\ "STR":1,
+	\ "DEX":0,
+	\ "CON":0,
+	\ "INT":3,
+	\ "WIS":3,
+	\ "CHA":1
+}
+
+let character_skills = {
+	\ "Character_Athletics": character_attr["STR"] % 2,
+	\ "Acrobatics": character_attr["DEX"] % 2,
+	\ "Sleight_of_Hand": character_attr["DEX"] % 2,
+	\ "Stealth": character_attr["DEX"] % 2,
+	\ "Arcana": character_attr["INT"] % 1,
+	\ "History": character_attr["INT"] % 1,
+	\ "Investigation": character_attr["INT"] % 1,
+	\ "Nature": character_attr["INT"] % 2,
+	\ "Religion": character_attr["INT"] % 2,
+	\ "Animal_Handling": character_attr["WIS"] % 2,
+	\ "Insight": character_attr["WIS"] % 1,
+	\ "Medicine": character_attr["WIS"] % 2,
+	\ "Perception": character_attr["WIS"] % 2,
+	\ "Survival": character_attr["WIS"] % 2,
+	\ "Deception": character_attr["CHA"] % 2,
+	\ "Intimidation": character_attr["CHA"] % 2,
+	\ "Performance": character_attr["CHA"] % 2,
+	\ "Persuasion": character_attr["CHA"] % 2}
+
+let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
+			 \"Nature", "Religion", "Animal Handling", "Insight", "Medicine", "Perception", "Survival",
+			 \"Deception", "Intimidation", "Performance", "Persuasion"]
+
+function g:Character_Check(check)
+	let rand = system("python -c 'import random;print(random.randint(1,'" . check . "'))'")
+	return rand
 endfunction
 
 function g:Character_Creator_Help()
