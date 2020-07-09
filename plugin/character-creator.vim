@@ -74,9 +74,13 @@ let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
 			 \"Deception", "Intimidation", "Performance", "Persuasion"]
 
 function g:Character_Skill_Check(check)
-	let max = 20 + g:character_skills[a:check]
-	let rand = system("python -c 'import random;print(random.randint(1,'" . max . "'))'")
-	echo "Adv " . g:character_skills[a:check] . "| Rand " . rand
+	if type(a:check) == 1
+		if a:check in g:character_skills
+			let max = 20 + g:character_skills[a:check]
+			let rand = system("python -c 'import random;print(random.randint(1,'" . max . "'))'")
+			echo "Adv " . g:character_skills[a:check] . "| Rand " . rand
+		endif	
+	endif
 endfunction
 
 function g:Character_Creator_Help()
