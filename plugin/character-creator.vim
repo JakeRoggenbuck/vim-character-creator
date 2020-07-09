@@ -79,7 +79,9 @@ function g:Character_Skill_Check(check)
 			let adv = get(g:character_skills, a:check)
 			let rand_command = 'import random;print(f"[{random.randint(1,20) + ' . adv . '}, {random.randint(1,20) + ' . adv . '}]")'
 			let rand = system("python -c '" . rand_command . "'")
-			echo "Adv:" . adv . "Nat:" . rand - adv . " Rand " . rand
+			echo "Adv:" . adv . " Rand " . rand
+			echo "Rand " . rand[0] + 1
+			echo "Rand " . rand[1] + 1
 		else
 			echo s:checks
 		endif	
