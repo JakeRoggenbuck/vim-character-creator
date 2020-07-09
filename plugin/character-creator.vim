@@ -39,7 +39,7 @@ let saving_throws = {
     \ "CON":0,
     \ "INT":6,
     \ "WIS":6,
-    \ "CHA":1,
+    \ "CHA":1
 }
 
 let character_attr = {
@@ -69,7 +69,8 @@ let character_skills = {
 	\ "Deception": character_attr["CHA"] % 2,
 	\ "Intimidation": character_attr["CHA"] % 2,
 	\ "Performance": character_attr["CHA"] % 2,
-	\ "Persuasion": character_attr["CHA"] % 2}
+	\ "Persuasion": character_attr["CHA"] % 2
+}
 
 let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
 			 \"Nature", "Religion", "Animal Handling", "Insight", "Medicine", "Perception", "Survival",
