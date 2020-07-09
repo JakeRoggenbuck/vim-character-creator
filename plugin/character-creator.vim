@@ -39,7 +39,7 @@ let g:saving_throws = {
     \ "CON":0,
     \ "INT":6,
     \ "WIS":6,
-    \ "CHA":1
+    \ "CHA":1,
 }
 
 let g:character_attr = {
@@ -48,7 +48,7 @@ let g:character_attr = {
 	\ "CON":0,
 	\ "INT":3,
 	\ "WIS":3,
-	\ "CHA":1
+	\ "CHA":1,
 }
 
 let g:character_skills = {
@@ -69,7 +69,7 @@ let g:character_skills = {
 	\ "Deception": saving_throws["CHA"] / 2,
 	\ "Intimidation": saving_throws["CHA"] / 2,
 	\ "Performance": saving_throws["CHA"] / 2,
-	\ "Persuasion": saving_throws["CHA"] / 2
+	\ "Persuasion": saving_throws["CHA"] / 2,
 }
 
 let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
