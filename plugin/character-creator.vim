@@ -77,11 +77,9 @@ function g:Character_Skill_Check(check)
 	if type(a:check) == 1
 		if get(g:character_skills, a:check, "NONE") != "NONE"
 			let adv = get(g:character_skills, a:check)
-			let rand_command = 'import random;print(f"[{random.randint(1,20) + ' . adv . '}, {random.randint(1,20) + ' . adv . '}]")'
+			let rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f"[{role1 + ' . adv . '}, {role2 + ' . adv . '}] ({role1},{role2})")'
 			let rand = system("python -c '" . rand_command . "'")
 			echo "Adv:" . adv . " Rand " . rand
-			echo "Rand " . rand[0] + 1
-			echo "Rand " . rand[1] + 1
 		else
 			echo s:checks
 		endif	
