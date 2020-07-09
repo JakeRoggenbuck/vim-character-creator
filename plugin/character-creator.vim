@@ -33,7 +33,7 @@ function g:Character_Decision()
 	return decisions[l:rand]
 endfunction
 
-let s:saving_throws = {
+let g:saving_throws = {
 	\ "STR": "1",
 	\ "DEX": "0",
 	\ "CON": "0",
@@ -41,7 +41,7 @@ let s:saving_throws = {
 	\ "WIS": "6",
 	\ "CHA": "1"}
 
-let s:character_attr = {
+let g:character_attr = {
 	\ "STR": "1",
 	\ "DEX": "0",
 	\ "CON": "0",
@@ -49,7 +49,7 @@ let s:character_attr = {
 	\ "WIS": "3",
 	\ "CHA": "1"}
 
-let s:character_skills = {
+let g:character_skills = {
 	\ "Athletics": character_attr["STR"],
 	\ "Acrobatics": character_attr["DEX"],
 	\ "Sleight_of_Hand": character_attr["DEX"],
@@ -75,12 +75,12 @@ let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana
 
 function g:Character_Skill_Check(check)
 	if type(a:check) == 1
-		if get(s:character_skills, a:check, "NONE") != "NONE"
-			let s:prof_ = get(s:character_skills, a:check)
-			let s:rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . s:prof_ . '}, {role2 + ' . s:prof_ . '}] Nat:({role1},{role2})")'
-			let s:rand_ = system("python -c '" . s:rand_command . "'")
+		if get(g:character_skills, a:check, "NONE") != "NONE"
+			let l:prof_ = get(g:character_skills, a:check)
+			let l:rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . l:prof_ . '}, {role2 + ' . l:prof_ . '}] Nat:({role1},{role2})")'
+			let l:rand_ = system("python -c '" . l:rand_command . "'")
 			echo a:check
-			echo "Adv:" . s:prof_ . s:rand_
+			echo "Adv:" . l:prof_ . l:rand_
 		else
 			echo s:checks
 		endif	
