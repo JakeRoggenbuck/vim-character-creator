@@ -78,7 +78,7 @@ function g:Character_Skill_Check(check)
 		if get(g:character_skills, a:check) == 3
 			let max = 20 + get(g:character_skills, a:check)
 			let rand_command = 'import random;print(f"[{random.randint(0,3)}, {random.randint(0,3)}]")'
-			let rand = system("python -c " . rand_command)
+			let rand = system("python -c '" . rand_command . "'")
 			echo "Adv " . get(g:character_skills, a:check) . "| Rand " . rand
 		else
 			echo s:checks
