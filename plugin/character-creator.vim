@@ -33,7 +33,7 @@ function g:Character_Decision()
 	return decisions[rand]
 endfunction
 
-let saving_throws = {
+let g:saving_throws = {
 	\ "STR":1,
     \ "DEX":0,
     \ "CON":0,
@@ -41,7 +41,7 @@ let saving_throws = {
     \ "WIS":6,
     \ "CHA":1}
 
-let character_attr = {
+let g:character_attr = {
 	\ "STR":1,
 	\ "DEX":0,
 	\ "CON":0,
@@ -49,7 +49,7 @@ let character_attr = {
 	\ "WIS":3,
 	\ "CHA":1}
 
-let character_skills = {
+let g:character_skills = {
 	\ "Character_Athletics": character_attr["STR"] % 2,
 	\ "Acrobatics": character_attr["DEX"] % 2,
 	\ "Sleight_of_Hand": character_attr["DEX"] % 2,
@@ -74,8 +74,8 @@ let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
 			 \"Deception", "Intimidation", "Performance", "Persuasion"]
 
 function g:Character_Skill_Check(check)
-	let rand = system("python -c 'import random;print(random.randint(1,'" . character_skills[a:check] . "'))'")
-	echo "Total " . character_skills[a:check] . "| Rand " . rand
+	let rand = system("python -c 'import random;print(random.randint(1,'" . g:character_skills[a:check] . "'))'")
+	echo "Total " . g:character_skills[a:check] . "| Rand " . rand
 endfunction
 
 function g:Character_Creator_Help()
