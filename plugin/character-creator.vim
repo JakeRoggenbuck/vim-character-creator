@@ -50,31 +50,31 @@ let g:character_attr = {
 	\ "CHA":1}
 
 let g:character_skills = {
-	\ "Character_Athletics": character_attr["STR"] / 2,
-	\ "Acrobatics": character_attr["DEX"] / 2,
-	\ "Sleight_of_Hand": character_attr["DEX"] / 2,
-	\ "Stealth": character_attr["DEX"] / 2,
-	\ "Arcana": character_attr["INT"] / 1,
-	\ "History": character_attr["INT"] / 1,
-	\ "Investigation": character_attr["INT"] / 1,
-	\ "Nature": character_attr["INT"] / 2,
-	\ "Religion": character_attr["INT"] / 2,
-	\ "Animal_Handling": character_attr["WIS"] / 2,
-	\ "Insight": character_attr["WIS"] / 1,
-	\ "Medicine": character_attr["WIS"] / 2,
-	\ "Perception": character_attr["WIS"] / 2,
-	\ "Survival": character_attr["WIS"] / 2,
-	\ "Deception": character_attr["CHA"] / 2,
-	\ "Intimidation": character_attr["CHA"] / 2,
-	\ "Performance": character_attr["CHA"] / 2,
-	\ "Persuasion": character_attr["CHA"] / 2}
+	\ "Character_Athletics": saving_throws["STR"] / 2,
+	\ "Acrobatics": saving_throws["DEX"] / 2,
+	\ "Sleight_of_Hand": saving_throws["DEX"] / 2,
+	\ "Stealth": saving_throws["DEX"] / 2,
+	\ "Arcana": saving_throws["INT"] / 1,
+	\ "History": saving_throws["INT"] / 1,
+	\ "Investigation": saving_throws["INT"] / 1,
+	\ "Nature": saving_throws["INT"] / 2,
+	\ "Religion": saving_throws["INT"] / 2,
+	\ "Animal_Handling": saving_throws["WIS"] / 2,
+	\ "Insight": saving_throws["WIS"] / 1,
+	\ "Medicine": saving_throws["WIS"] / 2,
+	\ "Perception": saving_throws["WIS"] / 2,
+	\ "Survival": saving_throws["WIS"] / 2,
+	\ "Deception": saving_throws["CHA"] / 2,
+	\ "Intimidation": saving_throws["CHA"] / 2,
+	\ "Performance": saving_throws["CHA"] / 2,
+	\ "Persuasion": saving_throws["CHA"] / 2}
 
 let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana", "History", "Investigation",
 			 \"Nature", "Religion", "Animal Handling", "Insight", "Medicine", "Perception", "Survival",
 			 \"Deception", "Intimidation", "Performance", "Persuasion"]
 
 function g:Character_Skill_Check(check)
-	let rand = system("python -c 'import random;print(random.randint(1,'" . g:character_skills[a:check] . "'))'")
+	let rand = system("python -c 'import random;print(random.randint(1,'" . 20 + g:character_skills[a:check] . "'))'")
 	echo "Total " . g:character_skills[a:check] . "| Rand " . rand
 endfunction
 
