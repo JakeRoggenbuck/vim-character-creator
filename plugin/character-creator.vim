@@ -27,13 +27,13 @@ function g:Character_Creator_Roll(dice)
 endfunction
 
 function g:Character_Decision()
-	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?",
+	let l:decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?",
 					\"likely not", "Id rather be a wizard with only melee weapons"]
-	let rand = system("python -c 'import random;print(random.randint(0, 4))'")
-	return decisions[rand]
+	let l:rand = system("python -c 'import random;print(random.randint(0, 4))'")
+	return decisions[l:rand]
 endfunction
 
-let g:saving_throws = {
+let s:saving_throws = {
 	\ "STR": "1",
 	\ "DEX": "0",
 	\ "CON": "0",
@@ -41,7 +41,7 @@ let g:saving_throws = {
 	\ "WIS": "6",
 	\ "CHA": "1"}
 
-let g:character_attr = {
+let s:character_attr = {
 	\ "STR": "1",
 	\ "DEX": "0",
 	\ "CON": "0",
@@ -49,7 +49,7 @@ let g:character_attr = {
 	\ "WIS": "3",
 	\ "CHA": "1"}
 
-let g:character_skills = {
+let s:character_skills = {
 	\ "Athletics": character_attr["STR"],
 	\ "Acrobatics": character_attr["DEX"],
 	\ "Sleight_of_Hand": character_attr["DEX"],
@@ -75,12 +75,12 @@ let s:checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana
 
 function g:Character_Skill_Check(check)
 	if type(a:check) == 1
-		if get(g:character_skills, a:check, "NONE") != "NONE"
-			let prof_ = get(g:character_skills, a:check)
-			let rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . prof_ . '}, {role2 + ' . prof_ . '}] Nat:({role1},{role2})")'
-			let rand_ = system("python -c '" . rand_command . "'")
+		if get(s:character_skills, a:check, "NONE") != "NONE"
+			let s:prof_ = get(s:character_skills, a:check)
+			let s:rand_command = 'import random;role1=random.randint(1,20);role2=random.randint(1,20);print(f" Role:[{role1 + ' . s:prof_ . '}, {role2 + ' . s:prof_ . '}] Nat:({role1},{role2})")'
+			let s:rand_ = system("python -c '" . s:rand_command . "'")
 			echo a:check
-			echo "Adv:" . prof_ . rand_
+			echo "Adv:" . s:prof_ . s:rand_
 		else
 			echo s:checks
 		endif	
