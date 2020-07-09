@@ -73,9 +73,9 @@ let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
 			 \"Nature", "Religion", "Animal Handling", "Insight", "Medicine", "Perception", "Survival",
 			 \"Deception", "Intimidation", "Performance", "Persuasion"]
 
-function g:Character_Check(check)
-	let rand = system("python -c 'import random;print(random.randint(1,'" . check . "'))'")
-	return rand
+function g:Character_Skill_Check(check)
+	let rand = system("python -c 'import random;print(random.randint(1,'" . character_skills[a:check] . "'))'")
+	echo "Total " . character_skills[a:check] . "| Rand " . rand
 endfunction
 
 function g:Character_Creator_Help()
