@@ -27,7 +27,7 @@ function g:Character_Creator_Roll(dice)
 endfunction
 
 function g:Character_Decision()
-	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?", 
+	let decisions = ["Is a goliath heavy?", "yes", "How many gold pieces we talkin?",
 					\"likely not", "Id rather be a wizard with only melee weapons"]
 	let rand = system("python -c 'import random;print(random.randint(0, 4))'")
 	return decisions[rand]
@@ -74,8 +74,9 @@ let checks = ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
 			 \"Deception", "Intimidation", "Performance", "Persuasion"]
 
 function g:Character_Skill_Check(check)
-	let rand = system("python -c 'import random;print(random.randint(1,'" . 20 + g:character_skills[a:check] . "'))'")
-	echo "Total " . g:character_skills[a:check] . "| Rand " . rand
+	let max = 20 + g:character_skills[a:check]
+	let rand = system("python -c 'import random;print(random.randint(1,'" . max . "'))'")
+	echo "Adv " . g:character_skills[a:check] . "| Rand " . rand
 endfunction
 
 function g:Character_Creator_Help()
